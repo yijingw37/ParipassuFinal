@@ -23,6 +23,13 @@ Vue.component("room-scene", {
 		<!--------- ASSETS ---------->
 		<a-assets>
 			<img id="sky" crossOrigin="anonymous" src="img/textures/sky-night.png">
+			<img id="puppy1" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy1.jpg?v=1653938042524">
+			<img id="puppy2" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/Puppy2.png?v=1653938276497">
+			<img id="puppy3" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy3.jpg?v=1653937444176">
+			<img id="puppy4" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy4.jpg?v=1653937444571">
+			<img id="puppy5" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy5.jpg?v=1653937444778">
+			<img id="puppy6" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy6.jpg?v=1653938939876">
+			<img id="puppy7" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy7.jpg?v=1653939059695">
 			<img id="earth" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/pinkStrip.png?v=1651179624008">
 			<img id="chatpet" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/pinkBubble.jpg?v=1651198693895">
 		</a-assets>

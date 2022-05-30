@@ -13,17 +13,17 @@ Vue.component("obj-head", {
 			<obj-axes scale=".1 .1 .1" v-if="true" />
 		</a-sphere>
 
-		<a-box v-for="(spike,index) in spikes"
-			:depth="headSize*2"
-			:height="headSize*.2"
-			:width="headSize*2"
-			:position="spike.position.toAFrame(0, .2, 0)"
-			:rotation="spike.rotation.toAFrame()"
-			:color="obj.color.toHex(Math.sin(index))" 
+		// <a-box v-for="(spike,index) in spikes"
+		// 	:depth="headSize*2"
+		// 	:height="headSize*.2"
+		// 	:width="headSize*2"
+		// 	:position="spike.position.toAFrame(0, .2, 0)"
+		// 	:rotation="spike.rotation.toAFrame()"
+		// 	:color="obj.color.toHex(Math.sin(index))" 
 				
-			>
+		// 	>
 		
-		</a-box>
+		// </a-box>
 	</a-entity>
 	`,
 	computed: {
@@ -192,7 +192,20 @@ Vue.component("obj-world", {
 	<a-entity>
 		<!--------- SKYBOX --------->
 		<a-sky color="lightblue"></a-sky>
-		<a-video src="img/textures/earthVideo.mp4" crossOrigin="anonymous" width="8" height="4.5" position="0 3 -9"></a-video>
+		<a-curvedimage src="#puppy1" height="10" radius="15" theta-length="20" theta-start="-180"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy4" height="10" radius="15" theta-length="20" theta-start="-230"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy5" height="10" radius="15" theta-length="20" theta-start="-205"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy2" height="10" radius="15" theta-length="20" theta-start="-130"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy3" height="10" radius="15" theta-length="20" theta-start="-155"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy6" height="10" radius="15" theta-length="20" theta-start="-255"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy7" height="10" radius="15" theta-length="20" theta-start="-105"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
 		<a-plane 
 			roughness="1"
 			shadow 
@@ -230,21 +243,21 @@ Vue.component("obj-world", {
 
 		
 
-		<a-box 
-			v-for="(rock,index) in rocks"
-			:key="'rock' + index"
-			shadow 
+		// <a-box 
+		// 	v-for="(rock,index) in rocks"
+		// 	:key="'rock' + index"
+		// 	shadow 
 
-			roughness="1"
+		// 	roughness="1"
 
-			:color="rock.color.toHex()"
-			:width="rock.size.x" 
-			:depth="rock.size.z" 
-			:height="rock.size.y" 
+		// 	:color="rock.color.toHex()"
+		// 	:width="rock.size.x" 
+		// 	:depth="rock.size.z" 
+		// 	:height="rock.size.y" 
 			
-			:rotation="rock.rotation.toAFrame()"
-			:position="rock.position.toAFrame()">
-		</a-box>
+		// 	:rotation="rock.rotation.toAFrame()"
+		// 	:position="rock.position.toAFrame()">
+		// </a-box>
 
 	</a-entity>
 		`,
