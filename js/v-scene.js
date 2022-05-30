@@ -24,6 +24,7 @@ Vue.component("room-scene", {
 		<a-assets>
 			<img id="sky" crossOrigin="anonymous" src="img/textures/sky-night.png">
 			<img id="earth" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/pinkStrip.png?v=1651179624008">
+			<img id="chatpet" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/pinkBubble.jpg?v=1651198693895">
 		</a-assets>
 
 		<!--------- CAMERA --------->

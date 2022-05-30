@@ -136,7 +136,7 @@ Vue.component("obj-fire", {
 	methods: {
 		click() {
 			this.obj.fireStrength += 0.5
-			this.obj.fireStrength = this.obj.fireStrength%5 + 1
+			this.obj.fireStrength = this.obj.fireStrength%30 + 1
 
 			// Tell the server about this action
 			this.obj.post()
@@ -161,8 +161,7 @@ Vue.component("obj-ball", {
 		<a-sphere
 			position="-0.5 1 -2"
 			:radius="obj.r"
-			color="pink"
-			@click="click"
+			src="#chatpet"
 			:animation="radiusAnimation"
 			>
 		</a-sphere>
@@ -178,13 +177,6 @@ Vue.component("obj-ball", {
 	},
 
 	methods: {
-		click() {
-			this.obj.r += 1
-			this.obj.r = this.obj.r%10 + 1
-			console.log("ball clicked")
-			// Tell the server about this action
-			this.obj.post()
-		}
 	},
 
 	// this function runs once when this object is created
@@ -200,7 +192,7 @@ Vue.component("obj-world", {
 	<a-entity>
 		<!--------- SKYBOX --------->
 		<a-sky color="lightblue"></a-sky>
-
+		
 		<a-plane 
 			roughness="1"
 			shadow 
@@ -284,19 +276,19 @@ Vue.component("obj-world", {
 		}
 
 		let rocks = []
-		let rockCount = 20
+		let rockCount = 100
 		for (var i = 0; i < rockCount; i++) {
 			let h = 1.2 + noise(i*100) // Size from 1 to 3
 			let rock = new LiveObject(undefined, { 
-				size: new THREE.Vector3(h, h, h),
+				size: new THREE.Vector3(Math.random()*h, Math.random()*h, Math.random()*h),
 				color: new Vector(noise(i)*30 + 140, 0, 40 + 20*noise(i*3))
 			})
-			let r = 4 + 1*noise(i*1)
+			let r = 4 + 1*noise(i*100)
 			// Put them on the other side
-			let theta = 2*noise(i*10) + 3
-			rock.position.setToCylindrical(r, theta, h*.3)
+			let theta = noise(i*100) + 3
+			rock.position.setToCylindrical(r, theta, h)
 			// Look randomly
-			rock.lookAt(Math.random()*100,Math.random()*100,Math.random()*100)
+			rock.lookAt(Math.random()*100,0,Math.random()*100)
 			rocks.push(rock)
 		}
 
@@ -323,20 +315,6 @@ Vue.component("obj-world", {
 
 		fire.position.set(1, 0, -2)
 		fire.fireStrength = 1
-
-		// let fire2 = new LiveObject(this.room, {
-		// 	paritype: "fire",  // Tells it which type to use
-		// 	uid: "fire2",
-		// 	onUpdate({t, dt, frameCount}) {
-		// 		let hue = (noise(t*.02)+1)*180
-		// 		Vue.set(this.color.v, 0, hue)
-				
-		// 		// console.log(this.color[0] )
-		// 	}
-		// })
-
-		// fire2.position.set(3, 0, -4)
-		// fire2.fireStrength = 7
 
 		let ball = new LiveObject(this.room, {
 			paritype: "ball",  // Tells it which type to use
