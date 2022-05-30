@@ -23,6 +23,7 @@ Vue.component("room-scene", {
 		<!--------- ASSETS ---------->
 		<a-assets>
 			<img id="sky" src="img/textures/sky-night.png">
+			<img id="earth" src="img/textures/earth.jpg">
 		</a-assets>
 
 		<!--------- CAMERA --------->

@@ -68,37 +68,43 @@ Vue.component("obj-head", {
 
 Vue.component("obj-fire", {
 	template: `
+
 	<a-entity>
-		<a-sphere 
-			color="grey"
-			radius=2 
-			scale="1 .3 1" 
-			roughness=1
-			segments-height="5"
-			segments-width="10"
-			theta-start=0
-			theta-length=60
-			position="0 -.4 0"
-			>
-		</a-sphere>
-		<a-cone
-			position="0 .2 0"
+		// <a-sphere 
+		// 	color="grey"
+		// 	radius=2 
+		// 	scale="1 .3 1" 
+		// 	roughness=1
+		// 	segments-height="5"
+		// 	segments-width="10"
+		// 	theta-start=0
+		// 	theta-length=60
+		// 	position="0 -.4 0"
+		// 	>
+		// </a-sphere>
+		<a-sphere
+			position="0 1.5 0"
 			@click="click"
 			:animation="heightAnimation"
 			:color="obj.color.toHex()"
-			height=.2
-			radius-bottom=".2"
+			height=1
+			radius=".5"
 
 			:scale="(obj.fireStrength*.2 + 1) + ' ' + .1*obj.fireStrength + ' ' + (obj.fireStrength*.2 + 1)"
 			:material="fireMaterial">
 
-		</a-cone>
-
+		</a-sphere>
+		<a-sphere
+			position="0 1.5 0"
+			radius=".5"
+			src="#earth"
+			>
+		</a-sphere>
 		<a-light
 			:animation="intensityAnimation"
 
 			position="0 1 0"
-			intensity="2"
+			intensity="500"
 			:color="obj.color.toHex()"
 			type="point"
 			:distance="obj.fireStrength*4 + 10"
@@ -272,8 +278,20 @@ Vue.component("obj-world", {
 			onUpdate({t, dt, frameCount}) {
 				let hue = (noise(t*.02)+1)*180
 				Vue.set(this.color.v, 0, hue)
-				
 				// console.log(this.color[0] )
+			},
+			setForce({t, dt, frameCount}) {
+				let idNumber = this.uid.hashCode()
+				this.f.set(0,0,0)
+
+				let move = Math.max(0,2*noise(t*.12 + idNumber - 1))
+				this.f.addPolar(move,20*noise(t*.2 + idNumber))
+
+
+				if (this.position.length() > 4) {
+					this.f.addScaledVector(this.position, -.02)
+				}
+				// this.position.z = this.height
 			}
 		})
 
