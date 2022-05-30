@@ -4,15 +4,24 @@ const fakeBodySteps = 500
 // Decorate the head of our guests
 Vue.component("obj-head", {
 	template: `<a-entity>
-		<a-sphere 
+		<a-cylinder 
 			shadow
 			:radius="headSize"
 			:color="obj.color.toHex()" 
-				
+			:height="headSize+2*Math.random()"
 			>
-			<obj-axes scale=".1 .1 .1" v-if="true" />
-		</a-sphere>
-
+			<obj-axes scale="0 0 0" v-if="true" />
+		</a-cylinder>
+		// <a-box v-for="(spike,index) in spikes"
+		// 	:depth="headSize*2"
+		// 	:height="headSize*.2"
+		// 	:width="headSize*2"
+		// 	:position="spike.position.toAFrame(0, .2, 0)"
+		// 	:rotation="spike.rotation.toAFrame()"
+		// 	:color="obj.color.toHex(Math.sin(index))" 
+				
+		// 	>
+		<a-torus :radius="headSize" radius-tubular="0.01" rotation="60 0 0" :color="obj.color.toHex()" position="0 1 0"></a-torus>
 		// <a-box v-for="(spike,index) in spikes"
 		// 	:depth="headSize*2"
 		// 	:height="headSize*.2"
@@ -31,7 +40,7 @@ Vue.component("obj-head", {
 			return this.obj.color.toHex?this.obj.color.toHex():this.obj.color
 		},
 		headSize() {
-			return this.obj.size instanceof Vector ? this.obj.size.x : this.obj.size
+			return this.obj.size instanceof Vector ? this.obj.size.x*2*Math.random() : this.obj.size*2*Math.random()
 		},
 	},
 
