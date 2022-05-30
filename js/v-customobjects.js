@@ -192,7 +192,7 @@ Vue.component("obj-world", {
 	<a-entity>
 		<!--------- SKYBOX --------->
 		<a-sky color="lightblue"></a-sky>
-		
+		<a-video src="img/textures/earthVideo.mp4" crossOrigin="anonymous" width="8" height="4.5" position="0 3 -9"></a-video>
 		<a-plane 
 			roughness="1"
 			shadow 
