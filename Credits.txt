@@ -1,0 +1,18 @@
+Credits
+I used below puppy pictures from the internet
+https://brandonpuppypalace.com/wp-content/uploads/2021/12/brandon-puppy-palace.jpg
+https://cdn.cnn.com/cnnnext/dam/assets/220405165909-12-puppy-dog-eyes-wellness-scn.jpg
+https://s.yimg.com/ny/api/res/1.2/ZYa5wWg24KVc5HLdbgVUNQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/en-US/best_life_342/668168f76f91d5f9e4b968113492a5ab
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLVtpYNudeBQxSU7_NCsN5Yyf_6sr8CeFbig&usqp=CAU
+https://images.pexels.com/photos/1420405/pexels-photo-1420405.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHT87ze-C6AIV9pO8uxceZMFtvtB2tv-X7Wg&usqp=CAU
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyh1Q-e5qWwBLwbxDmHFud6yvg9JsI41F4jw&usqp=CAU
+https://www.mspca.org/wp-content/uploads/2019/01/Maciorakowski_New-Puppy_Image-1.jpg
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQblLjHxWpT87NDy9Zbk-OWZj7KVk__PcjoXw&usqp=CAU
+https://images.squarespace-cdn.com/content/v1/54e7a1a6e4b08db9da801ded/1600464166638-5C0HPLJ9HT1TZBEHWVJR/Screen+Shot+2020-09-17+at+2.44.15+PM.png
+https://images.unsplash.com/photo-1601979031925-424e53b6caaa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHVwcHl8ZW58MHx8MHx8&w=1000&q=80
+https://www.akc.org/wp-content/uploads/2021/09/Finnish-Lapphund-shutterstock_1038964219.jpg
+https://media.istockphoto.com/photos/puppy-running-at-the-park-picture-id1184654849?k=20&m=1184654849&s=612x612&w=0&h=46xjmS9WDi02Po5FopGJHyDVXlQY-2ztPrOg1pPffDA=
+https://media.istockphoto.com/photos/happy-puppy-dog-running-on-playground-green-yard-picture-id1197074302?k=20&m=1197074302&s=612x612&w=0&h=lSFkBMEwo4VnNAPuRVv-nAuc5dp1k1E62or2b70SbZs=
+
+I used Professor compton's starter code.

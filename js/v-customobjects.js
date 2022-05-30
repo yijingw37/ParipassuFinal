@@ -109,7 +109,7 @@ Vue.component("obj-fire", {
 			intensity="500"
 			:color="obj.color.toHex()"
 			type="point"
-			:distance="obj.fireStrength*4 + 10"
+			:distance="obj.fireStrength*4 + 50"
 			decay="2">
 		</a-light>
 	</a-entity>
@@ -191,7 +191,7 @@ Vue.component("obj-world", {
 	template: `
 	<a-entity>
 		<!--------- SKYBOX --------->
-		<a-sky color="lightblue"></a-sky>
+		<a-sky src="#sky"></a-sky>
 		<a-curvedimage src="#puppy1" height="10" radius="15" theta-length="20" theta-start="-180"
 		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
 		<a-curvedimage src="#puppy4" height="10" radius="15" theta-length="20" theta-start="-230"
@@ -205,6 +205,20 @@ Vue.component("obj-world", {
 		<a-curvedimage src="#puppy6" height="10" radius="15" theta-length="20" theta-start="-255"
 		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
 		<a-curvedimage src="#puppy7" height="10" radius="15" theta-length="20" theta-start="-105"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy8" height="10" radius="15" theta-length="20" theta-start="-80"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy9" height="10" radius="15" theta-length="20" theta-start="-280"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy10" height="10" radius="15" theta-length="20" theta-start="-305"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy11" height="10" radius="15" theta-length="20" theta-start="-330"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy12" height="10" radius="15" theta-length="20" theta-start="-355"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy13" height="10" radius="15" theta-length="20" theta-start="-55"
+		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
+		<a-curvedimage src="#puppy14" height="10" radius="15" theta-length="20" theta-start="-30"
 		rotation="0 100 0" scale="1 1 1"></a-curvedimage>
 		<a-plane 
 			roughness="1"
@@ -224,8 +238,7 @@ Vue.component("obj-world", {
 			castShadow target="#directionaltarget">
 			<a-entity id="directionaltarget" position="-10 0 -20"></a-entity>
 		</a-light>
-
-		<a-cone 
+		<a-octahedron 
 			v-for="(tree,index) in trees"
 			:key="'tree' + index"
 			shadow 
@@ -239,7 +252,22 @@ Vue.component("obj-world", {
 			
 			:rotation="tree.rotation.toAFrame()"
 			:position="tree.position.toAFrame()">
-		</a-cone>
+		</a-octahedron>
+		// <a-cone 
+		// 	v-for="(tree,index) in trees"
+		// 	:key="'tree' + index"
+		// 	shadow 
+
+		// 	:color="tree.color.toHex()"
+		// 	:base-radius="tree.size.z" 
+		// 	:height="tree.size.y" 
+
+		// 	segments-radial=10
+		// 	segments-height=1
+			
+		// 	:rotation="tree.rotation.toAFrame()"
+		// 	:position="tree.position.toAFrame()">
+		// </a-cone>
 
 		
 
@@ -279,11 +307,11 @@ Vue.component("obj-world", {
 			let h = 6 + 4*noise(i) // Size from 1 to 3
 			let tree = new LiveObject(undefined, { 
 				size: new THREE.Vector3(.3, h, .3),
-				color: new Vector(noise(i*50)*30 + 160, 100, 40 + 10*noise(i*10))
+				color: new Vector(noise(i*50)*10 + 60, 100, 50)
 			})
 			let r = 20 + 10*noise(i*40)
 			let theta = 2*noise(i*10)
-			tree.position.setToCylindrical(r, theta, h/2)
+			tree.position.setToCylindrical(r, theta, h*2)
 			tree.lookAt(0,1,0)
 			trees.push(tree)
 		}

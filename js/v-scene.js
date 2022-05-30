@@ -22,7 +22,7 @@ Vue.component("room-scene", {
 		
 		<!--------- ASSETS ---------->
 		<a-assets>
-			<img id="sky" crossOrigin="anonymous" src="img/textures/sky-night.png">
+			<img id="sky" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/sky-day.png?v=1653941624643">
 			<img id="puppy1" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy1.jpg?v=1653938042524">
 			<img id="puppy2" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/Puppy2.png?v=1653938276497">
 			<img id="puppy3" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy3.jpg?v=1653937444176">
@@ -30,6 +30,14 @@ Vue.component("room-scene", {
 			<img id="puppy5" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy5.jpg?v=1653937444778">
 			<img id="puppy6" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy6.jpg?v=1653938939876">
 			<img id="puppy7" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy7.jpg?v=1653939059695">
+			<img id="puppy8" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy8.jpg?v=1653940611892">
+			<img id="puppy9" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy9.jpg?v=1653940611807">
+			<img id="puppy10" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy10.jpeg?v=1653940611949">
+			<img id="puppy11" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy11.jpg?v=1653940927203">
+			<img id="puppy12" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy12.jpg?v=1653940927203">
+			<img id="puppy13" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy13.jpg?v=1653941077024">
+			<img id="puppy14" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/puppy14.jpg?v=1653941076937">
+			
 			<img id="earth" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/pinkStrip.png?v=1651179624008">
 			<img id="chatpet" crossOrigin="anonymous" src="https://cdn.glitch.global/2a3c8a33-ddcb-41e4-9d0c-e43c923a4c1b/pinkBubble.jpg?v=1651198693895">
 		</a-assets>
