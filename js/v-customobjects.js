@@ -98,6 +98,8 @@ Vue.component("obj-fire", {
 			position="0 1.5 0"
 			radius=".5"
 			src="#earth"
+			@click="click"
+			:scale="(obj.fireStrength*.2 + 0.5) + ' ' + (obj.fireStrength*.2 + 0.5) + ' ' + (obj.fireStrength*.2 + 0.5)"
 			>
 		</a-sphere>
 		<a-light
@@ -133,8 +135,8 @@ Vue.component("obj-fire", {
 
 	methods: {
 		click() {
-			this.obj.fireStrength += 1
-			this.obj.fireStrength = this.obj.fireStrength%10 + 1
+			this.obj.fireStrength += 0.5
+			this.obj.fireStrength = this.obj.fireStrength%5 + 1
 
 			// Tell the server about this action
 			this.obj.post()
@@ -153,7 +155,44 @@ Vue.component("obj-fire", {
 
 })
 
+Vue.component("obj-ball", {
+	template: `
+	<a-entity>
+		<a-sphere
+			position="-0.5 1 -2"
+			:radius="obj.r"
+			color="pink"
+			@click="click"
+			:animation="radiusAnimation"
+			>
+		</a-sphere>
+	</a-entity>
 
+	`,
+
+	// Values computed on the fly
+	computed: {
+		radiusAnimation() {
+			return `property: radius; from:${this.obj.r};to:${this.obj.r*2}; dir:alternate;dur: 1000; easing:easeInOutQuad;loop:true`
+		}
+	},
+
+	methods: {
+		click() {
+			this.obj.r += 1
+			this.obj.r = this.obj.r%10 + 1
+			console.log("ball clicked")
+			// Tell the server about this action
+			this.obj.post()
+		}
+	},
+
+	// this function runs once when this object is created
+	mounted() {
+
+	},
+	props: ["obj"]
+})
 
 Vue.component("obj-world", {
 
@@ -279,19 +318,6 @@ Vue.component("obj-world", {
 				let hue = (noise(t*.02)+1)*180
 				Vue.set(this.color.v, 0, hue)
 				// console.log(this.color[0] )
-			},
-			setForce({t, dt, frameCount}) {
-				let idNumber = this.uid.hashCode()
-				this.f.set(0,0,0)
-
-				let move = Math.max(0,2*noise(t*.12 + idNumber - 1))
-				this.f.addPolar(move,20*noise(t*.2 + idNumber))
-
-
-				if (this.position.length() > 4) {
-					this.f.addScaledVector(this.position, -.02)
-				}
-				// this.position.z = this.height
 			}
 		})
 
@@ -312,6 +338,24 @@ Vue.component("obj-world", {
 		// fire2.position.set(3, 0, -4)
 		// fire2.fireStrength = 7
 
+		let ball = new LiveObject(this.room, {
+			paritype: "ball",  // Tells it which type to use
+			uid: "ball0",
+			setForce({t, dt, frameCount}) {
+				let idNumber = this.uid.hashCode()
+				this.f.set(0,0,0)
+
+				let move = Math.max(0,2*noise(t*.12 + idNumber - 1))
+				this.f.addPolar(move,20*noise(t*.2 + idNumber))
+
+
+				if (this.position.length() > 4) {
+					this.f.addScaledVector(this.position, -.02)
+				}
+				// this.position.z = this.height
+			}
+		})
+		ball.r = 0.5;
 		
 		let grammar = new tracery.createGrammar(  {
 			songStyle : ", played as #song.a#, on #musicModifier# #instrument#",
